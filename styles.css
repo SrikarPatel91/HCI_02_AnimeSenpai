@@ -1,0 +1,283 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #333;
+    color: #E4E4E4;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2B2B2D; /* Change to black */
+    padding: 1rem 2rem;
+}
+
+.logo h1 {
+    color: #5C9EAD; /* Change logo color to orange */
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5C9EAD; /* White text color */
+    font-size: 1rem;
+   
+}
+.nav-links a:hover{
+    color: #1abc9c; 
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 16px;
+    width: 30vw;
+}
+
+.search-box button {
+    padding: 5px 10px;
+    background-color: #5C9EAD;
+    border: none;
+    color: #ecf0f1;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #1abc9c;
+}
+.login-btn .btn {
+    background-color: #5C9EAD;
+    color: white;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-btn .btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #333;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid #555;
+}
+
+.modal-footer {
+    border-top: 1px solid #555;
+}
+
+.btn-primary {
+    background-color: #5C9EAD;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1abc9c;
+}
+/* Featured Anime Section */
+.featured {
+    position: relative;
+}
+
+.carousel-item {
+    position: relative;
+    height: 80vh;
+    background-color: #000;
+    color: #5C9EAD;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    opacity: 0.7; 
+}
+
+.carousel-caption {
+    position: bottom;
+    bottom: 20%;
+    left: 5%;
+    text-align: left;
+}
+
+.carousel-caption h5 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.carousel-caption .btn {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+}
+
+/* Anime List Section */
+.anime-list {
+    padding: 60px 20px;
+    background-color: #333;
+    margin:  auto;
+}
+
+.anime-list h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #5C9EAD; /* Changed from #34495e to black */
+}
+.anime-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+}
+.anime-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.anime-item {
+    flex: 0 0 auto;
+    width: 180px;
+    scroll-snap-align: start;
+    padding: 15px;
+}
+.anime-item img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.anime-item .number {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.anime-item .title {
+    font-size: 14px;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.anime-grid {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .anime-item {
+    position: relative;
+    width: 180px;
+    cursor: pointer;
+  }
+
+  .anime-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Hover effect styling */
+.anime-item .anime-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+}
+
+.anime-item:hover .anime-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+.anime-info .title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.anime-info .detail {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.nav-buttons button {
+    background-color: #5C9EAD;
+    color: #1a1a2e;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 100px;
+    height: 5vh;
+}
+.nav-buttons button:hover {
+    background-color: #1abc9c;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+}

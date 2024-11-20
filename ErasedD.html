@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERASED</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="BroutoD.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>AnimeSenpai</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search anime..." id="name">
+            <button  onclick="find()">Search</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Subbed_Animes.html">Subbed Anime</a></li>
+            <li><a href="Anime_movies.html">Anime Movies</a></li>
+            <li><a href="#" onclick="random()">Random</a></li>
+            <li><a href="index.html">Most Popular</a></li>
+        </ul>
+       <div class="login-btn">
+                    <a href="#" class="btn" data-toggle="modal" data-target="#loginModal">User Login</a>
+                   </div>
+            </nav>
+            <!-- Login Modal -->
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="loginEmailInput">Email address</label>
+                                    <input type="email" class="form-control" id="loginEmailInput" placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPasswordInput">Password</label>
+                                    <input type="password" class="form-control" id="loginPasswordInput">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="loginButton">Login</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Register Modal -->
+            <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="usernameInput">Username</label>
+                                    <input type="text" class="form-control" id="usernameInput" placeholder="Choose a username">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerEmailInput">Email address</label>
+                                    <input type="email" class="form-control" id="registerEmailInput" placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPasswordInput">Password</label>
+                                    <input type="password" class="form-control" id="registerPasswordInput">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    <div class="container">
+        <div class="anime-details">
+            <!-- Poster Section -->
+            <div class="poster">
+                <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/3bfbeac90c228063d45869dbf9d5d028.jpg">         
+                <a href="Erasedv.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+            </div>
+
+            <!-- Info Section -->
+            <div class="anime-info">
+                <div class="breadcrumbs">Home • TV •  ERASED</div>
+                <h1 class="title"> ERASED</h1>
+                
+                <div class="tags">
+                    <span class="tag hd">HD</span>
+                    <span class="tag cc">CC 12</span>
+                    <span class="tag">Audio 12</span>
+                    <span class="tag">TV</span>
+                    <span class="tag">23m</span>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-primary" onclick="window.location.href= 'Erasedv.html'">▶ Watch Now</button>
+                    <button class="btn btn-secondary" onclick="display()" id="dis">+ Add to List</button>
+                </div>
+                <div class="success-container" id="pop">
+                    <span class="checkmark">✔️</span>
+                    <span>Successfully added to list</span>
+                </div>
+
+                <div class="description">
+                    When tragedy is about to strike, Satoru Fujinuma finds himself sent back several minutes before the accident occurs. 
+                    The detached, 29-year-old manga artist has taken advantage of this powerful yet mysterious phenomenon, which he calls 
+                    "Revival," to save many lives. However, when he is wrongfully accused of murdering someone close to him, Satoru is sent back 
+                    to the past once again, but this time to 1988, 18 years in the past. Soon, he realizes that the murder may be connected to the 
+                    abduction and killing of one of his classmates, the solitary and mysterious Kayo Hinazuki, that took place when he was a child. 
+                    This is his chance to make things right. Boku dake ga Inai Machi follows Satoru in his mission to uncover what truly transpired 
+                    18 years ago and prevent the death of his classmate while protecting those he cares about in the present. 
+                </div>
+ 
+                <div class="share-section">
+                    <div class="share-header">
+                        <div class="share-icon"></div>
+                        <span>Share Anime with your friends</span>
+                    </div>
+                    <div class="social-buttons">
+                        
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_URL" target="_blank" class="social-btn facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        
+                        <a href="https://telegram.me/share/url?url=YOUR_URL&text=Check this out!" target="_blank" class="social-btn telegram">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    
+                        <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="https://twitter.com/intent/tweet?url=YOUR_URL&text=Check this out!" target="_blank" class="social-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meta Section -->
+            <div class="anime-meta">
+                <div class="meta-item">
+                    <strong>Aired:</strong>  Jan 8, 2016 to Mar 25, 2016
+                </div>
+                <div class="meta-item">
+                    <strong>Premiered:</strong>  Winter 2016
+                </div>
+                <div class="meta-item">
+                    <strong>Genres:</strong>
+                    <div class="genre-tags">
+                        <span class="genre-tag">Mystery </span>
+                        <span class="genre-tag">Supernatural</span>
+                        <span class="genre-tag"> Psychological</span>
+                        <span class="genre-tag"> Seinen</span>
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <strong>Studios:</strong>  A-1 Pictures
+                </div>
+                <div class="meta-item">
+                    <strong>Producers:</strong> Aniplex, Dentsu, Kadokawa Shoten, Fuji TV, DAX Production, Kyoraku Industrial Holdings, Kansai Telecasting, Lawson, C-one, A-1 Pictures, Aniplex of America
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations Section -->
+        <div class="recommendation-container">
+            <div class="main-recommendations">
+                <div class="recommendations">
+                    <div class="section-header">
+                        <h2 class="section-title">Recommended for you</h2>
+                    </div>
+                    <div class="anime-grid">
+                        <div class="anime-card">
+                        <a href="NarutoD.html" style="text-decoration: none;color: white;"> <img src="https://wallpapercave.com/wp/wp3630511.jpg" alt="Naruto">
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">Naruto</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="Narutov.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                        <div class="anime-card">
+                            <a href="Solo_levelingD.html" style="text-decoration: none;color: white;"><img src="https://rukminim2.flixcart.com/image/416/416/xif0q/book/g/d/c/solo-leveling-vol-8-comic-original-imahy5kgrhcc2tq8.jpeg?q=70&crop=false" alt="Solo leveling">
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">Solo leveling</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="Solo_levelingv.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                        <div class="anime-card">
+                            <a href="Death_NoteD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/5e61f3e7c0045e46b670d31a5bb39c68.jpg" >
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">Death Note</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="Death_Notev.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                        <div class="anime-card">
+                            <a href="Attack_on_TitanD.html" style="text-decoration: none;color: white;"><img src="https://i.pinimg.com/originals/cb/12/b6/cb12b6435e3a7afbaeea1bf972ec0d4d.jpg">
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">Attack on Titan</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="Attack_on_Titanv.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                        <div class="anime-card">
+                            <a href="One_PieceD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/bcd84731a3eda4f4a306250769675065.jpg" alt="One piece">
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">One piece</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="One_Piecev.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                        <div class="anime-card">
+                            <a href="HorimiyaD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/84f307c05bb3d0ef62477e44196e69eb.jpg" >
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">Horimiya</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="Hello_Worldv.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                        <div class="anime-card">
+                            <a href="My_starD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/995928d6858977d66f7da57e0e0af08a.jpg">
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">My Star</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="My_starv.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                        
+                        <div class="anime-card">
+                            <a href="BorutoD.html" style="text-decoration: none;color: white;"><img src="Boruto.png">
+                            <div class="anime-card-info">
+                                <div class="anime-card-title">Boruto</div>
+                                <div class="anime-card-meta">TV • 23m</div>
+                                <a href="Borutov.html" style="text-decoration: none;"><div class="watch-together">Watch Now</div></a>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="most-popular">
+                <div class="recommendations">
+                    <div class="section-header">
+                        <h2 class="section-title">Most Popular</h2>
+                    </div>
+                    <div class="anime-list">
+                        <a href="Attack_on_TitanD.html" style="text-decoration: none; color: white;">   <div class="anime-item">
+                           <img src="https://i.pinimg.com/originals/cb/12/b6/cb12b6435e3a7afbaeea1bf972ec0d4d.jpg" alt="AOT">
+                            <div class="anime-info">
+                                <div class="anime-title">Attack on Titan</div>
+                                <div class="anime-meta">
+                                    <span class="badge episodes">cc 7</span>
+                                    <span class="badge audio">7</span>
+                                    <span class="type">TV</span>
+                                </div>
+                            </div>
+                        </div></a>
+                        <a href="NarutoD.html" style="text-decoration: none; color: white;">  <div class="anime-item">
+                            <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/5db400c33f7494bc8ae96f9e634958d0.jpg" alt="Naruto: Shippuden">
+                            <div class="anime-info">
+                                <div class="anime-title">Naruto: Shippuden</div>
+                                <div class="anime-meta">
+                                    <span class="badge episodes">cc 11</span>
+                                    <span class="badge audio">11</span>
+                                    <span class="type">TV</span>
+                                </div>
+                            </div>
+                        </div></a>
+                        <a href="One_PieceD.html" style="text-decoration: none; color: white;">  <div class="anime-item">
+                            <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/bcd84731a3eda4f4a306250769675065.jpg" alt="One piece">
+                            <div class="anime-info">
+                                <div class="anime-title">One piece</div>
+                                <div class="anime-meta">
+                                    <span class="badge episodes">cc 8</span>
+                                    <span class="badge audio">8</span>
+                                    <span class="type">TV</span>
+                                </div>
+                            </div>
+                        </div></a>
+                        <a href="jjk0D.html" style="text-decoration: none; color: white;">   <div class="anime-item">
+                             <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/a26294497c6afa9b885636b373d611f9.jpg" alt="Jujutsu Kaisen 2nd Season">
+                            <div class="anime-info">
+                                <div class="anime-title">Jujutsu Kaisen 0 movie</div>
+                                <div class="anime-meta">
+                                    <span class="badge episodes">cc 1</span>
+                                    <span class="badge audio">1</span>
+                                    <span class="type">TV</span>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+</body>
+</html>

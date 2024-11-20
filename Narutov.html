@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Watch Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Borutov.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>AnimeSenpai</h1>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search anime..." id="name">
+            <button  onclick="find()">Search</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Subbed_Animes.html">Subbed Anime</a></li>
+            <li><a href="Anime_movies.html">Anime Movies</a></li>
+            <li><a href="#" onclick="random()">Random</a></li>
+            <li><a href="index.html">Most Popular</a></li>
+        </ul>
+        <div class="login-btn">
+            <a href="#" class="btn" data-toggle="modal" data-target="#loginModal">User Login</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="loginEmailInput">Email address</label>
+                        <input type="email" class="form-control" id="loginEmailInput" placeholder="name@example.com" aria-label="Email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPasswordInput">Password</label>
+                        <input type="password" class="form-control" id="loginPasswordInput" aria-label="Password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="loginButton">Login</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal" data-dismiss="modal">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="usernameInput">Username</label>
+                        <input type="text" class="form-control" id="usernameInput" placeholder="Choose a username" aria-label="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmailInput">Email address</label>
+                        <input type="email" class="form-control" id="registerEmailInput" placeholder="name@example.com" aria-label="Email address">
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPasswordInput">Password</label>
+                        <input type="password" class="form-control" id="registerPasswordInput" aria-label="Password">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="registerButton">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main class="main-container">
+    
+    <!-- Sidebar - Episode List -->
+    <aside class="sidebar">
+        
+        <h3>Episodes</h3>
+        <div class="episode-list">
+            <button class="episode-btn active-episode" onclick="switchVideo('1', this)">1</button>
+            <button class="episode-btn" onclick="switchVideo('2', this)">2</button>
+            <button class="episode-btn" onclick="switchVideo('3', this)">3</button>
+            <button class="episode-btn" onclick="switchVideo('4', this)">4</button>
+            <button class="episode-btn" onclick="switchVideo('5', this)">5</button>
+            <button class="episode-btn" onclick="switchVideo('6', this)">6</button>
+            <button class="episode-btn" onclick="switchVideo('7', this)">7</button>
+            <button class="episode-btn" onclick="switchVideo('8', this)">8</button>
+            <button class="episode-btn" onclick="switchVideo('9', this)">9</button>
+            <button class="episode-btn" onclick="switchVideo('10', this)">10</button>
+            <button class="episode-btn" onclick="switchVideo('11', this)">11</button>
+            <!-- Add more buttons as needed -->
+        </div>
+    </aside>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <video id="1" width="850" controls>
+            <source src="Naruto/EP.1.mp4" type="video/mp4">
+        </video>
+        <video id="2" width="850" controls style="display:none;">
+            <source src="Naruto/EP.2.mp4" type="video/mp4">
+        </video>
+        <video id="3" width="850" controls style="display:none;">
+            <source src="Naruto/EP.3.mp4" type="video/mp4">
+        </video>
+        <video id="4" width="850" controls style="display:none;">
+            <source src="Naruto/EP.4.mp4" type="video/mp4">
+        </video>
+        <video id="5" width="850" controls style="display:none;">
+            <source src="Naruto/EP.5.mp4" type="video/mp4">
+        </video>
+        <video id="6" width="850" controls style="display:none;">
+            <source src="Naruto/EP.6.mp4" type="video/mp4">
+        </video>
+        <video id="7" width="850" controls style="display:none;">
+            <source src="Naruto/EP.7.mp4" type="video/mp4">
+        </video>
+        <video id="8" width="850" controls style="display:none;">
+            <source src="Naruto/EP.8.mp4" type="video/mp4">
+        </video>
+        <video id="9" width="850" controls style="display:none;">
+            <source src="Naruto/EP.9.mp4" type="video/mp4">
+        </video>
+        <video id="10" width="850" controls style="display:none;">
+            <source src="Naruto/EP.10.mp4" type="video/mp4">
+        </video>
+        <video id="11" width="850" controls style="display:none;">
+            <source src="Naruto/EP.11.mp4" type="video/mp4">
+        </video>
+        <br>
+        <div style=" color: #5C9EAD; font-weight: 600; font-size: 25px;"><p id="p">Episode 1</p></div>
+    </section>
+    
+    <!-- Anime Details -->
+    <aside class="details-section">
+        <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/5db400c33f7494bc8ae96f9e634958d0.jpg" width="250px">
+        <h4>Naruto</h4>
+        <p> Moments prior to Naruto Uzumaki's birth, a huge demon known as...</p>
+        <button class="btn-view-detail" onclick="Detail()">View Detail</button>
+        <div class="rating-header">
+            <div class="score">
+                <span>⭐</span>
+                <span>10.0</span>
+            </div>
+            <span class="vote-now">Vote now</span>
+        </div>
+        <div class="rating-question">What do you think about this anime?</div>
+        <div class="rating-options">
+            <div class="emoji-option" data-rating="1">
+                <div class="emoji">😞</div>
+                <div class="label">Boring</div>
+            </div>
+            <div class="emoji-option" data-rating="2">
+                <div class="emoji">😊</div>
+                <div class="label">Great</div>
+            </div>
+            <div class="emoji-option" data-rating="3">
+                <div class="emoji">😍</div>
+                <div class="label">Amazing</div>
+            </div>
+        </div>
+    </aside>
+    </main>
+    <div class="recommendation-container">
+        <div class="main-recommendations">
+            <div class="recommendations">
+                <div class="section-header">
+                    <h2 class="section-title">Recommended for you</h2>
+                </div>
+                <div class="anime-grid">
+                    <div class="anime-card">
+                        <a href="Solo_levelingD.html" style="text-decoration: none;color: white;"><img src="https://rukminim2.flixcart.com/image/416/416/xif0q/book/g/d/c/solo-leveling-vol-8-comic-original-imahy5kgrhcc2tq8.jpeg?q=70&crop=false" alt="Solo leveling"></a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">Solo leveling</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='Solo_levelingv.html'">Watch Now</button>
+                        </div>
+                    </div>
+                    <div class="anime-card">
+                        <a href="Death_NoteD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/5e61f3e7c0045e46b670d31a5bb39c68.jpg" ></a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">Death Note</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='Death_Notev.html'">Watch Now</button>
+                        </div>
+                    </div>
+                    <div class="anime-card">
+                        <a href="Attack_on_TitanD.html" style="text-decoration: none;color: white;"><img src="https://i.pinimg.com/originals/cb/12/b6/cb12b6435e3a7afbaeea1bf972ec0d4d.jpg"></a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">Attack on Titan</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='Attack_on_Titanv.html'">Watch Now</button>
+                        </div>
+                    </div>
+                    <div class="anime-card">
+                        <a href="ErasedD.html" style="text-decoration: none;color: white;"><img src="https://th.bing.com/th/id/R.60694e1a5913aed7382e361837ea3805?rik=l9kfpqlF%2b%2b8Ocw&riu=http%3a%2f%2fmedia.senscritique.com%2fmedia%2f000013356657%2fsource_big%2fErased.jpg&ehk=v2ule1Vtk06pCrFFh31lu0ow%2bH6P6MzJ8KIlnbkanOI%3d&risl=&pid=ImgRaw&r=0"></a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">Erased</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='Erasedv.html'">Watch Now</button>
+                        </div>
+                    </div>
+                    <div class="anime-card">
+                        <a href="One_PieceD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/bcd84731a3eda4f4a306250769675065.jpg" alt="One piece"></a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">One piece</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='One_Piecev.html'">Watch Now</button>
+                        </div>
+                    </div>
+                    <div class="anime-card">
+                        <a href="HorimiyaD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/84f307c05bb3d0ef62477e44196e69eb.jpg" ></a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">Horimiya</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='Horimiyav.html'">Watch Now</button>
+                        </div>
+                    </div>
+                    <div class="anime-card">
+                        <a href="My_starD.html" style="text-decoration: none;color: white;"><img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/995928d6858977d66f7da57e0e0af08a.jpg"></a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">My Star</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='My_starv.html'">Watch Now</button>
+                        </div>
+                    </div>
+                    <div class="anime-card">
+                        <a href="BorutoD.html" style="text-decoration: none;color: white;"><img src="Boruto.png"> </a>
+                        <div class="anime-card-info">
+                            <div class="anime-card-title">Boruto</div>
+                            <div class="anime-card-meta">TV • 23m</div>
+                            <button class="episode-btn" style="background-color: #5C9EAD;" onclick="window.location.href='Borutov.html'">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="most-popular">
+            <div class="recommendations">
+                <div class="section-header">
+                    <h2 class="section-title">Most Popular</h2>
+                </div>
+                <div class="anime-list">
+                    <a href="Attack_on_TitanD.html" style="text-decoration: none; color: white;">   <div class="anime-item">
+                       <img src="https://i.pinimg.com/originals/cb/12/b6/cb12b6435e3a7afbaeea1bf972ec0d4d.jpg" alt="AOT">
+                        <div class="anime-info">
+                            <div class="anime-title">Attack on Titan</div>
+                            <div class="anime-meta">
+                                <span class="badge episodes">cc 7</span>
+                                <span class="badge audio">7</span>
+                                <span class="type">TV</span>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="NarutoD.html" style="text-decoration: none; color: white;">  <div class="anime-item">
+                        <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/5db400c33f7494bc8ae96f9e634958d0.jpg" alt="Naruto: Shippuden">
+                        <div class="anime-info">
+                            <div class="anime-title">Naruto: Shippuden</div>
+                            <div class="anime-meta">
+                                <span class="badge episodes">cc 11</span>
+                                <span class="badge audio">11</span>
+                                <span class="type">TV</span>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="One_PieceD.html" style="text-decoration: none; color: white;">  <div class="anime-item">
+                        <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/bcd84731a3eda4f4a306250769675065.jpg" alt="One piece">
+                        <div class="anime-info">
+                            <div class="anime-title">One piece</div>
+                            <div class="anime-meta">
+                                <span class="badge episodes">cc 8</span>
+                                <span class="badge audio">8</span>
+                                <span class="type">TV</span>
+                            </div>
+                        </div>
+                    </div></a>
+                    <a href="jjk0D.html" style="text-decoration: none; color: white;">   <div class="anime-item">
+                         <img src="https://cdn.noitatnemucod.net/thumbnail/300x400/100/a26294497c6afa9b885636b373d611f9.jpg" alt="Jujutsu Kaisen 2nd Season">
+                        <div class="anime-info">
+                            <div class="anime-title">Jujutsu Kaisen 0 movie</div>
+                            <div class="anime-meta">
+                                <span class="badge episodes">cc 1</span>
+                                <span class="badge audio">1</span>
+                                <span class="type">TV</span>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 h!anime. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+    .active-episode {
+        background-color: #5C9EAD;
+        color: white;
+    }
+</style>
+
+<script>
+    let currentVideo = document.getElementById('1'); // Set the initial video to the first video
+    let currentButton = document.querySelector('.episode-btn.active-episode'); // Set the initial button as active
+    let x=document.getElementById("p").value();
+    function switchVideo(videoId, button) {
+        // Pause and reset the currently playing video
+        if (currentVideo) {
+            currentVideo.pause();
+            currentVideo.currentTime = 0;
+            currentVideo.style.display = "none";
+        }
+
+        // Display the selected video
+        currentVideo = document.getElementById(videoId);
+        currentVideo.style.display = "block";
+        currentVideo.play();
+
+        // Remove active color from the previous button
+        if (currentButton) {
+            currentButton.classList.remove("active-episode");
+        }
+
+        // Set the selected button to active color
+        currentButton = button;
+        currentButton.classList.add("active-episode");
+        document.getElementById("p").innerText ="Episode "+ videoId;
+    }
+
+    function Detail(){
+        window.location.href = "NarutoD.html";
+            }
+</script>
+</body>
+</html>

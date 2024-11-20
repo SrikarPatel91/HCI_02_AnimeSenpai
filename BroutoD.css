@@ -1,0 +1,415 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #333;
+    color: #E4E4E4;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2B2B2D; /* Change to black */
+    padding: 1rem 2rem;
+}
+
+.logo h1 {
+    color: #5C9EAD; /* Change logo color to orange */
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5C9EAD; /* White text color */
+    font-size: 1rem;
+   
+}
+.nav-links a:hover{
+    color: #1abc9c; 
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-size: 16px;
+    width: 30vw;
+}
+
+.search-box button {
+    padding: 5px 10px;
+    background-color: #5C9EAD;
+    border: none;
+    color: #ecf0f1;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #1abc9c;
+}
+.login-btn .btn {
+    background-color: #5C9EAD;
+    color: white;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-btn .btn:hover {
+    background-color: #1abc9c;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #333;
+    color: white;
+}
+
+.modal-header {
+    border-bottom: 1px solid #555;
+}
+
+.modal-footer {
+    border-top: 1px solid #555;
+}
+
+.btn-primary {
+    background-color: #5C9EAD;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #1abc9c;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.anime-details {
+    display: flex;
+    gap: 30px;
+    background-color: #3A3A3C; /* Darker Slate */
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.poster {
+    flex-shrink: 0;
+    width: 220px;
+}
+
+.poster img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.watch-together {
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #5C9EAD; /* Teal */
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Middle Column - Info */
+.anime-info {
+    flex-grow: 1;
+}
+
+.breadcrumbs {
+    color: #888888;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 32px;
+    color: #5C9EAD; /* Teal */
+    margin-bottom: 15px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    background-color: #3a3a4a;
+}
+
+.tag.hd { background-color: #1b998b; }
+.tag.cc { background-color: #ff4b4b; }
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #5C9EAD; /* Teal */
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background-color: #FFE66D; /* Light Yellow */
+    color: #1f1f2f; /* Dark Text */
+}
+
+.description {
+    color: #bbbbbb;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    height: 10vh;
+}
+
+.more {
+    color: #5C9EAD; /* Teal */
+    cursor: pointer;
+}
+.success-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745; /* Green background for success */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+    z-index: 9999; /* Ensure it appears above other content */
+}
+
+.share-section {
+    border-top: 1px solid #3a3a4a;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.share-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.share-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3a3a4a;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.social-btn:hover {
+    text-decoration: none;
+    
+    transform: scale(1.1);
+}
+.social-btn.twitter { background-color: #1DA1F2; }
+.social-btn.facebook { background-color: #3b5998; }
+.social-btn.telegram { background-color: #0088cc; }
+.social-btn.instagram { background-color: #E1306C; }
+/* Right Column - Meta */
+.anime-meta {
+    width: 280px;
+    flex-shrink: 0;
+    color: #bbbbbb;
+    font-size: 14px;
+}
+
+.meta-item {
+    margin-bottom: 10px;
+}
+
+.meta-item strong {
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+.genre-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.genre-tag {
+    background-color: #343453;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+/* Recommendations Section */
+.recommendation-container {
+    display: flex; /* Use flexbox to align sections */
+    gap: 20px; /* Space between the two sections */
+}
+
+.main-recommendations {
+    flex: 1; /* Allow this section to grow and take remaining space */
+}
+
+.most-popular {
+    margin: 20PX;
+    width: 400px; /* Width for the Most Popular section */
+    background-color: #2b2b3b; /* Background color */
+    padding: 20px; /* Padding for internal spacing */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.anime-list {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Space between anime items */
+}
+
+.anime-item {
+    display: flex; /* Align image and text horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #3a3a4a; /* Background for anime items */
+    padding: 10px; /* Padding */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.anime-item img {
+    width: 60px; /* Set a consistent size for the image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Rounded corners for images */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.recommendations {
+    margin-top: 30px; /* Space above recommendations */
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between; /* Aligns title and any potential buttons */
+    margin-bottom: 20px; /* Space below the section header */
+}
+
+.section-title {
+    color: #5C9EAD; /* Teal color for section titles */
+    font-size: 24px; /* Font size for section titles */
+}
+
+.anime-grid {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+}
+
+.anime-card {
+    background-color: #343453; /* Background color for cards */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow */
+    transition: transform 0.2s; /* Animation for hover effect */
+}
+
+.anime-card:hover {
+    transform: scale(1.05); /* Hover effect to scale card */
+}
+
+.anime-card img {
+    width: 100%; /* Full width for images */
+    aspect-ratio: 2/3; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.anime-card-info {
+    padding: 10px; /* Padding for text */
+}
+
+.anime-card-title {
+    color: #5C9EAD; /* Teal color for card titles */
+    font-weight: bold; /* Bold titles */
+    margin-bottom: 5px; /* Space below title */
+}
+
+.anime-card-meta {
+    color: #bbbbbb; /* Light gray for meta text */
+    font-size: 13px; /* Font size for meta */
+}
+
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+}
+
+.episodes {
+    background-color: #cce74c;
+}
+
+.audio {
+    background-color: #8cc7ff;
+}
+.anime-item:hover {
+    transform: scale(1.05); /* Hover effect to scale card */
+}
